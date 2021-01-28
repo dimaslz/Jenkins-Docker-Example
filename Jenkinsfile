@@ -3,7 +3,7 @@ pipeline {
         // This registry is important for removing the image after the tests
         registry = "dimaslz/nodejs-ts"
     }
-    agent any
+    agent { docker { image 'node:14-alpine' } }
     stages {
         stage("Test") {
             steps {
