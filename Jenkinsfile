@@ -1,7 +1,7 @@
 pipeline {
     environment {
         // This registry is important for removing the image after the tests
-        registry = "yourname/nodeapp"
+        registry = "dimaslz/nodejs-ts"
     }
     agent any
     stages {
@@ -21,7 +21,7 @@ pipeline {
 
                             // Running the tests inside the new directory
                             dir("$WORKSPACE$PROJECTDIR") {
-                                sh "npm test"
+                                sh "yarn test"
                             }
                         }
 
